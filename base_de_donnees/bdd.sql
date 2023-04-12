@@ -2,6 +2,25 @@ drop database if exists distributics;
 create database distributics;
 use distributics;
 
+create table categorie 
+(
+    numC real primary key,
+    intitule_c varChar(100)
+);
+
+create table type_produit
+(
+    num_typeproduit real primary key,
+    intitule_cp varChar(100)
+);
+
+create table distributeur
+(
+    numD varChar(100) primary key,
+    lieuD varChar(100) not null,
+    etatD boolean
+);
+
 create table utilisateur
 (
     mail varchar(100) primary key,
@@ -24,12 +43,6 @@ create table produit
     photoP varChar(100)
 );
 
-create table type_produit
-(
-    num_typeproduit real primary key,
-    intitule_cp varChar(100)
-);
-
 create table inventaire
 (
     numD varChar(100),
@@ -38,13 +51,6 @@ create table inventaire
     foreign key (numP) references produit(numP),
     foreign key (numD) references distributeur(numD),
     primary key (numP, numD)
-);
-
-create table distributeur
-(
-    numD varChar(100) primary key,
-    lieuD varChar(100) not null,
-    etatD boolean
 );
 
 create table note
@@ -68,11 +74,5 @@ create table idee_produit
     photoiP varChar(100),
     mail varChar(100),
     foreign key (mail) references utilisateur(mail)
-);
-
-create table categorie 
-(
-    numC real primary key,
-    intitule_c varChar(100)
 );
     

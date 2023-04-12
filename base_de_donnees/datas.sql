@@ -1,23 +1,23 @@
 insert into utilisateur (mail, pass, nom, prenom, typec, photo)
 values 
-    ("exemple_1_@mail.fr", "mot_de_passe_1","nom_1", "prenom_1", 1, "photoexmeple_1.png"),
-    ("exemple_2_@mail.fr", "mot_de_passe_2","nom_1", "prenom_2", 1, "photoexmeple_2.png"),
-    ("exemple_3_@mail.fr", "mot_de_passe_3","nom_1", "prenom_3", 1, "photoexmeple_3.png"),
-    ("exemple_4_@mail.fr", "mot_de_passe_4","nom_1", "prenom_4", 2, "photoexmeple_4.png"),
-    ("exemple_5_@mail.fr", "mot_de_passe_5","nom_1", "prenom_5", 3, "photoexmeple_5.png"),
-    ("exemple_6_@mail.fr", "mot_de_passe_6","nom_1", "prenom_6", 4, "photoexmeple_6.png");
+    ("anne-lisedeguilhem@mail.fr", "empereurromain","Deguilhem", "Anne-lise", 1, "Anne-lise.jpg"),
+    ("inesdasilva@mail.fr", "paresseux","Da Silva", "Inês", 1, "ines.jpg"),
+    ("campistronguillaume@mail.fr", "levieux","Campistron", "Guillaume", 1, "guillaume.jpg"),
+    ("cousinvictor@mail.fr", "tortue","Cousin", "Victor", 2, "victor.jpg"),
+    ("ledjoud@mail.fr", "random","Djoudi", "Mahieddine", 3, "DjoudiPro.png"),
+    ("lisachater@mail.fr", "onguligrade","Chater", "Lisa", 4, "lisa.jpg");
 
 insert into produit (numP, marqueP, nomP, typeP, prixP, photoP)
 values
-    ("produit_1", "marqueP_1", "nomP_1", 1, 1, "photoP_1"),
-    ("produit_2", "marqueP_2", "nomP_2", 1, 2, "photoP_2"),
-    ("produit_3", "marqueP_3", "nomP_3", 2, 3, "photoP_3"),
-    ("produit_4", "marqueP_4", "nomP_4", 2, 4, "photoP_4"),
-    ("produit_5", "marqueP_5", "nomP_5", 3, 5, "photoP_5"),
-    ("produit_6", "marqueP_6", "nomP_6", 3, 6, "photoP_6"),
-    ("produit_7", "marqueP_7", "nomP_7", 2, 7.5, "photoP_7"),
-    ("produit_8", "marqueP_8", "nomP_8", 1, 8.5, "photoP_8"),
-    ("produit_9", "marqueP_9", "nomP_9", 2, 9.5, "photoP_9");
+    ("produit_1", "Kinder", "Country", 1, 2, "country.png"),
+    ("produit_2", "Kinder", "Bueno_noir", 1, 3, "buenonoir.png"),
+    ("produit_3", "Kinder", "Bueno_blanc", 1, 3.5, "buenoblanc.png"),
+    ("produit_4", "St-Michel", "Madelaine", 1, 2, "madelaine.png"),
+    ("produit_5", "Lion", "Barre chocolat", 1, 1.5, "lion.png"),
+    ("produit_6", "Merling", "Chocolat Chaud", 2, 1, "chocolat.png"),
+    ("produit_7", "Nespresso", "Café", 2, 0.75, "cafe.png"),
+    ("produit_8", "Coca-cola", "Classic", 3, 3.5, "coca.png"),
+    ("produit_9", "Andros", "jus de pomme", 3, 2.5, "jdp.png");
 
 insert into distributeur (numD, lieuD, etatD)
 values
@@ -43,11 +43,11 @@ values
 
 insert into note (mail, numP, valeur)
 values 
-    ("exemple_2@mail.fr", "produit_7", 2.2),
-    ("exemple_3@mail.fr", "produit_8", 3),
-    ("exemple_4@mail.fr", "produit_8", 4),
-    ("exemple_5@mail.fr", "produit_8", 1),
-    ("exemple_5@mail.fr", "produit_6", 5);
+    ("inesdasilva@mail.fr", "produit_7", 2),
+    ("cousinvictor@mail.fr", "produit_8", 3),
+    ("ledjoud@mail.fr", "produit_8", 4),
+    ("lisachater@mail.fr", "produit_8", 1),
+    ("lisachater@mail.fr", "produit_6", 5);
 
 insert into categorie (numC, intitule_c)
 values 
@@ -65,9 +65,9 @@ values
 
 insert into idee_produit (idip, marqueiP, nomiP, typeiP, prixiP, photoiP, mail)
 values 
-    ("idee_produit_1", "marque_idee_1", "nom_idee_1", 1, 4, "photo_idee_1.png", "exemple_1_@mail.fr"),
-    ("idee_produit_2", "marque_idee_2", "nom_idee_2", 1, 5, "photo_idee_2.png", "exemple_2_@mail.fr"),
-    ("idee_produit_3", "marque_idee_3", "nom_idee_3", 2, 6, "photo_idee_3.png", "exemple_3_@mail.fr"),
-    ("idee_produit_4", "marque_idee_4", "nom_idee_4", 2, 4, "photo_idee._4png", "exemple_4_@mail.fr"),
-    ("idee_produit_5", "marque_idee_5", "nom_idee_5", 3, 5.5, "photo_idee_5.png", "exemple_5_@mail.fr"),
-    ("idee_produit_6", "marque_idee_6", "nom_idee_6", 3, 7, "photo_idee_6.png", "exemple_6_@mail.fr");
+    ("idee_produit_1", "Haribo", "dragibus", 1, 4, "dragibus.png", "anne-lisedeguilhem@mail.fr"),
+    ("idee_produit_2", "Lu", "petit ecolier", 1, 3.5, "ecolier.png", "cousinvictor@mail.fr"),
+    ("idee_produit_3", "Merling", "latte machiato", 2, 2, "latte.png", "campistronguillaume@mail.fr"),
+    ("idee_produit_4", "Coca-cola", "Cherry", 3, 3.5, "cocacherry.png", "lisachater@mail.fr"),
+    ("idee_produit_5", "Volvic", "Citron", 3, 3.5, "citron.png", "ledjoud@mail.fr"),
+    ("idee_produit_6", "Innocent", "smoothie fraise", 3, 7, "innocent.png", "inesdasilva@mail.fr");
