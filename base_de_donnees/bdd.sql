@@ -76,7 +76,7 @@ create table idee_produit
     foreign key (mail) references utilisateur(mail)
 );
     
-    insert into utilisateur (mail, pass, nom, prenom, typec, photo)
+insert into utilisateur (mail, pass, nom, prenom, typec, photo)
 values 
     ("anne-lisedeguilhem@mail.fr", "empereurromain","Deguilhem", "Anne-lise", 1, "Anne-lise.jpg"),
     ("inesdasilva@mail.fr", "paresseux","Da Silva", "Inês", 1, "ines.jpg"),
