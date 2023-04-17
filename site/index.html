@@ -5,6 +5,52 @@
 <title> Accueil </title>
 <link rel="stylesheet" media="screen" href="style/style.css">
 </head>
-<body> 
+<<<<<<< HEAD
+<body>
+    <ul>
+        <ul>
+            <li> <a href="index.html">Accueil</a> </li>
+            <li> <a href="Distributeur.html">Les Distributeurs</a> </li>
+            <li> <a href="Produit.html">Les Produits</a> </li>
+            <li> <a href="Demande_produit.html">Demande de produit</a> </li>
+            <li> <a href="listeutilisateur.html">Liste des Utilisateurs</a></li>
+            <li> <a href="validation produit.html">Validation des Produits</a></li>
+        </ul>
+</ul> 
+    <h1>DISTRIBUTICS</h1>
+    <h2>Connexion</h2>
+    <h3> Connectez vous avec vos identifaints :</h3>
+    <form method="POST" action="afficherDonnees.php"> 
+        <fieldset>
+            Adresse mail : <input name="adressemail"> <br>
+            Mot de passe : <input name="passUser" type="password"/><br>
+            <input type="submit" value="Connexion"/>
+        </fieldset>
+    </form> 
+ <h2> Pas de compte ? Inscrivez vous ici.</h2>
+ <h3> Veuillez renseigner les champs suivants : </h3>
+ <form method="POST" action="afficherDonnees.php"> \\je sais pas trop si on doit rajouter celui-ci\\
+     <fieldset>
+        Nom : </strong><input name="nomUser"><br>
+        Prenom : <input name="prenomUser"> <br>
+        Adresse mail : <input name="adressemail"> <br>
+        Vous êtes :
+            <select name="rangUser">
+            <option value="Etudiant"> un Etudiant </option>
+            <option value="Enseignant"> un Enseignant </option>
+            <option value="Doctorant"> un Doctorant </option>
+            <option value="Personnel"> Membre du Personnel </option>
+            <option value="Autre"> Autre </option>
+            </select>
+            <br>
+        Mot de passe : <input name="passUser" type="password"/><br>
+        Répétez votre mot de passe : <input name="passUser" type="password"/><br>
+        <br><strong>Ajoutez une description à votre profil.</strong><br><br>
+            <textarea name="comUser" rows="6" cols="60">
+            </textarea>
+        <br>
+        <input type="submit" value="Terminer"/>
+     </fieldset>
+    </form> 
 </body>
 </html>
