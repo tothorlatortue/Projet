@@ -60,7 +60,6 @@ if(isset($_SESSION["nom"]))
             echo "Connexion réussie.";
         }
 
-        session_start();
         if (isset($_POST['adressemail']))
         {
             $mail = stripslashes($_REQUEST['adressemail']);
@@ -70,7 +69,7 @@ if(isset($_SESSION["nom"]))
 
             $requete = "SELECT mail, pass, nom, prenom, typec, photo
                         FROM utilisateur 
-                        WHERE username like \"".$mail."\" and pass = \"".$mdp."\";";
+                        WHERE mail like \"".$mail."\" and pass = \"".$mdp."\";";
 
             $reponse = mysqli_query($connexion,$requete);
             $ligne = mysqli_fetch_array($reponse);

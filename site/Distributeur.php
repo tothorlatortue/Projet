@@ -42,6 +42,6 @@ if(!isset($_SESSION["nom"]))
         echo "<tr><td><h3><b>Catégorie :</b> ".$_SESSION['typec']."</h3></td></tr>";
         echo "</table>";
     ?>
-    <a href="logout.php">Déconnexion</a>
+    <h1><a href="logout.php">Déconnexion</a> </h1>
 </body>
 </html>
