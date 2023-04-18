@@ -9,7 +9,7 @@
     <h1>DISTRIBUTICS</h1>
         <ul>
             <ul>
-                <li> <a href="index.html">Accueil</a> </li>
+                <li> <a href="index.php">Accueil</a> </li>
                 <li> <a href="Distributeur.html">Les Distributeurs</a> </li>
                 <li> <a href="Produit.html">Les Produits</a> </li>
                 <li> <a href="Demande_produit.html">Demande de produit</a> </li>

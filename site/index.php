@@ -9,7 +9,7 @@
     <h1>DISTRIBUTICS</h1>
     <ul>
         <ul>
-            <li> <a href="index.html">Accueil</a> </li>
+            <li> <a href="index.php">Accueil</a> </li>
             <li> <a href="Distributeur.html">Les Distributeurs</a> </li>
             <li> <a href="Produit.html">Les Produits</a> </li>
             <li> <a href="Demande_produit.html">Demande de produit</a> </li>
@@ -83,6 +83,7 @@
                               VALUES (\"".$_POST['adressemail']."\",\"".$_POST['passUser']."\",\"".$_POST['nomUser']."\",\"".$_POST['prenomUser']."\",\"".$_POST['rangUser']."\",\"".$fichier."\");";
                     $ajout = mysqli_query($connexion,$r_ajout);
                     echo "<h2>L'utilisateur a été inscrit.</h2>";
+                    echo "<h2>Cliquez <a href=\"index.php\" >ici< </a> pour vous connecter.</h2>";
                 }
                 mysqli_free_result($reponse);
             }
