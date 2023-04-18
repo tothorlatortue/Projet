@@ -39,57 +39,44 @@
 <?php
     function login()
     {
-        
+
         $user = 'root';
-	    $password = 'root';
-	    $db = 'distributics';
-	    $host = 'localhost';
-	    $connexion = mysqli_connect($host, $user, $password, $db);
-		if(mysqli_connect_errno())
-		{
-			echo "Problème de connexion.";
-		}
-		else 
-		{
+        $password = 'root';
+        $db = 'distributics';
+        $host = 'localhost';
+        $connexion = mysqli_connect($host, $user, $password, $db);
+        if(mysqli_connect_errno())
+        {
+            echo "Problème de connexion.";
+        }
+        else 
+        {
             echo "Connexion réussie.";
-            if($_POST['adressemail'] != NULL)
+        }
+        session_start();
+
+        if (isset($_POST['adressemail']))
+        {
+            $mail = stripslashes($_REQUEST['adressemail']);
+            $mail = mysqli_real_escape_string($connexion, $mail);
+            $mdp = stripslashes($_REQUEST['passUser']);
+            $mdp = mysqli_real_escape_string($connexion, $passUser);
+
+            $requete = "SELECT mail, pass, nom, prenom, typec, photo
+                        FROM utilisateur 
+                        WHERE username like \"".$mail."\" and pass = \"".$mdp."\";";
+
+            $reponse = mysqli_query($connexion,$requete);
+            $ligne = mysqli_fetch_array($reponse)
+            if($ligne !== NULL)
             {
-                $requete = "SELECT mail
-                            FROM utilisateur 
-                            WHERE mail LIKE \"".$_POST['adressemail']."\";";
-                $reponse = mysqli_query($connexion,$requete);
-                $ligne = mysqli_fetch_array($reponse);
-                if($ligne != NULL)
-                {
-                    echo "<h2> Cette adresse mail est déjà utilisée.</h3>";
-                }
-                else 
-                {
-                    // On place la photo dans le répertoire photo/photo_user/
-                    $fichier = basename($_FILES['pprofil']['name']);
-                    $dossier = 'photo/photo_user/';
-                    $resultat = move_uploaded_file($_FILES['pprofil']['tmp_name'], $dossier . $fichier);
-                    if($resultat==true) //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
-                    {
-                        //echo 'Transfert de la photo effectué avec succès !';
-                    }        
-                    else //Sinon (la fonction renvoie FALSE).
-                    {
-                        //echo 'Echec du transfert de la photo !';
-                    }
-                        
-                    // ajout de l'utilisateur' dans la base de donées.
-                    $r_ajout="INSERT INTO utilisateur (mail, pass, nom, prenom, typec, photo)
-                              VALUES (\"".$_POST['adressemail']."\",\"".$_POST['passUser']."\",\"".$_POST['nomUser']."\",\"".$_POST['prenomUser']."\",\"".$_POST['rangUser']."\",\"".$fichier."\");";
-                    $ajout = mysqli_query($connexion,$r_ajout);
-                    echo "<h2>L'utilisateur a été inscrit.</h2>";
-                }
-                mysqli_free_result($reponse);
-            }
-            else
+                $_SESSION['username'] = $nom;
+                // header("Location: index.php");
+            }else
             {
-                echo "<h2>Aucune adresse mail n'a été rentrée.</h2>";
-            }
+                $message = "Le mail de l'utilisateur ou le mot de passe est incorrect.";
+            } 
+            mysqli_free_result($reponse);
         }
         mysqli_close($connexion);
     }

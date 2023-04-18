@@ -1,8 +1,16 @@
+<?php
+session_start();
+if(!isset($_SESSION["username"]))
+{
+    header("Location: index.php");
+    exit(); 
+}
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
 <meta charset="UTF8" />
-<title> Distributeur </title>
+<title> Validation produits </title>
 <link rel="stylesheet" media="screen" href="style/style.css">
 </head>
 <body> 
