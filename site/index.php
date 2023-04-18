@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION["username"]))
+if(isset($_SESSION["nom"]))
 {
     header("Location: Distributeur.php");
     exit(); 
@@ -76,12 +76,17 @@ if(isset($_SESSION["username"]))
             $ligne = mysqli_fetch_array($reponse);
             if($ligne !== NULL)
             {
-                $_SESSION['username'] = $nom;
+                $_SESSION['nom'] = $ligne['nom'];
+                $_SESSION['prenom'] = $ligne['prenom'];
+                $_SESSION['mail'] = $ligne['mail'];
+                $_SESSION['pass'] = $ligne['pass'];
+                $_SESSION['typec'] = $ligne['typec'];
+                $_SESSION['photo'] = $ligne['photo'];
                 header("Location: Distributeur.php");
             }
             else
             {
-                $message = "Le mail de l'utilisateur ou le mot de passe est incorrect.";
+                echo "Le mail de l'utilisateur ou le mot de passe est incorrect.";
             } 
             mysqli_free_result($reponse);
         }
