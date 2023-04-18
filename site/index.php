@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(isset($_SESSION["username"]))
+{
+    header("Location: Distributeur.php");
+    exit(); 
+}
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -8,19 +16,17 @@
 <body>
     <h1>DISTRIBUTICS</h1>
     <ul>
-        <ul>
-            <li> <a href="index.php">Accueil</a> </li>
-            <li> <a href="Distributeur.html">Les Distributeurs</a> </li>
-            <li> <a href="Produit.html">Les Produits</a> </li>
-            <li> <a href="Demande_produit.html">Demande de produit</a> </li>
-            <li> <a href="liste_utilisateur.html">Liste des Utilisateurs</a></li>
-            <li> <a href="validation_produit.html">Validation des Produits</a></li>
-        </ul>
+        <li> <a href="index.php">Accueil</a> </li>
+        <li> <a href="Distributeur.php">Les Distributeurs</a> </li>
+        <li> <a href="Produit.php">Les Produits</a> </li>
+        <li> <a href="Demande_produit.php">Demande de produit</a> </li>
+        <li> <a href="liste_utilisateur.php">Liste des Utilisateurs</a></li>
+        <li> <a href="validation_produit.php">Validation des Produits</a></li>
     </ul> 
 
     <h2>Connexion</h2>
     <h3> Connectez vous avec vos identifiants :</h3>
-    <form method="POST" action="afficherDonnees_1.php" enctype="multipart/form-data"> 
+    <form method="POST" enctype="multipart/form-data"> 
         <fieldset>
             Adresse mail : <input name="adressemail"> <br>
             Mot de passe : <input name="passUser" type="password"/><br>
@@ -53,26 +59,27 @@
         {
             echo "Connexion réussie.";
         }
-        session_start();
 
+        session_start();
         if (isset($_POST['adressemail']))
         {
             $mail = stripslashes($_REQUEST['adressemail']);
             $mail = mysqli_real_escape_string($connexion, $mail);
             $mdp = stripslashes($_REQUEST['passUser']);
-            $mdp = mysqli_real_escape_string($connexion, $passUser);
+            $mdp = mysqli_real_escape_string($connexion, $mdp);
 
             $requete = "SELECT mail, pass, nom, prenom, typec, photo
                         FROM utilisateur 
                         WHERE username like \"".$mail."\" and pass = \"".$mdp."\";";
 
             $reponse = mysqli_query($connexion,$requete);
-            $ligne = mysqli_fetch_array($reponse)
+            $ligne = mysqli_fetch_array($reponse);
             if($ligne !== NULL)
             {
                 $_SESSION['username'] = $nom;
-                // header("Location: index.php");
-            }else
+                header("Location: Distributeur.php");
+            }
+            else
             {
                 $message = "Le mail de l'utilisateur ou le mot de passe est incorrect.";
             } 

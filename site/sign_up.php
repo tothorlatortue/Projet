@@ -8,14 +8,12 @@
 <body>
     <h1>DISTRIBUTICS</h1>
         <ul>
-            <ul>
-                <li> <a href="index.php">Accueil</a> </li>
-                <li> <a href="Distributeur.html">Les Distributeurs</a> </li>
-                <li> <a href="Produit.html">Les Produits</a> </li>
-                <li> <a href="Demande_produit.html">Demande de produit</a> </li>
-                <li> <a href="liste_utilisateur.html">Liste des Utilisateurs</a></li>
-                <li> <a href="validation_produit.html">Validation des Produits</a></li>
-            </ul>
+            <li> <a href="index.php">Accueil</a> </li>
+            <li> <a href="Distributeur.php">Les Distributeurs</a> </li>
+            <li> <a href="Produit.php">Les Produits</a> </li>
+            <li> <a href="Demande_produit.php">Demande de produit</a> </li>
+            <li> <a href="liste_utilisateur.php">Liste des Utilisateurs</a></li>
+            <li> <a href="validation_produit.php">Validation des Produits</a></li>
         </ul>
     <h3> Veuillez renseigner les champs suivants : </h3>
         <form method="POST" enctype="multipart/form-data">
