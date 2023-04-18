@@ -2,42 +2,52 @@
 <html>
 <head>
 <meta charset="UTF8" />
-<title> Accueil </title>
+<title> Inscription </title>
 <link rel="stylesheet" media="screen" href="style/style.css">
 </head>
 <body>
     <h1>DISTRIBUTICS</h1>
-    <ul>
         <ul>
-            <li> <a href="index.html">Accueil</a> </li>
-            <li> <a href="Distributeur.html">Les Distributeurs</a> </li>
-            <li> <a href="Produit.html">Les Produits</a> </li>
-            <li> <a href="Demande_produit.html">Demande de produit</a> </li>
-            <li> <a href="liste_utilisateur.html">Liste des Utilisateurs</a></li>
-            <li> <a href="validation_produit.html">Validation des Produits</a></li>
+            <ul>
+                <li> <a href="index.html">Accueil</a> </li>
+                <li> <a href="Distributeur.html">Les Distributeurs</a> </li>
+                <li> <a href="Produit.html">Les Produits</a> </li>
+                <li> <a href="Demande_produit.html">Demande de produit</a> </li>
+                <li> <a href="liste_utilisateur.html">Liste des Utilisateurs</a></li>
+                <li> <a href="validation_produit.html">Validation des Produits</a></li>
+            </ul>
         </ul>
-    </ul> 
-
-    <h2>Connexion</h2>
-    <h3> Connectez vous avec vos identifiants :</h3>
-    <form method="POST" action="afficherDonnees_1.php" enctype="multipart/form-data"> 
-        <fieldset>
-            Adresse mail : <input name="adressemail"> <br>
-            Mot de passe : <input name="passUser" type="password"/><br>
-            <input name="log" type="submit" value="Connexion"/>
-        </fieldset>
-    </form>
-    <?php
-    // Si le formulaire de connexion a été soumis alors on verra 
-        if(isset($_POST["log"]))
-            login();
-    ?>
-    <h2> Pas de compte ? Inscrivez vous <a href="sign_up.php">ici</a>.</h2>
+    <h3> Veuillez renseigner les champs suivants : </h3>
+        <form method="POST" enctype="multipart/form-data">
+            <fieldset>
+                Nom : </strong><input name="nomUser"><br>
+                Prenom : <input name="prenomUser"> <br>
+                Adresse mail : <input name="adressemail"> <br>
+                Vous êtes :
+                    <select name="rangUser">
+                    <option value="1"> un Etudiant </option>
+                    <option value="2"> un Enseignant </option>
+                    <option value="3"> un Doctorant </option>
+                    <option value="4"> Membre du Personnel </option>
+                    <option value="5"> Autre </option>
+                    </select>
+                    <br>
+                Mot de passe : <input name="passUser" type="password"/><br>
+                <!-- Répétez votre mot de passe : <input name="passUser" type="password"/><br> -->
+                Photo : <input type="file" name="pprofil"/><br>
+                <input name="inscription" type="submit" value="Terminer"/>
+            </fieldset>
+            </form> 
+            <?php
+            // Si le formulaire d'inscription d'un utilisateur a été soumis alors on appel la fonction addUser()
+            if(isset($_POST["inscription"]))
+                addUser();
+            ?>
 </body>
 </html>
 
 <?php
-    function login()
+    function addUser()
     {
         
         $user = 'root';
