@@ -11,6 +11,11 @@ h2
     color: white;
 }
 
+h3
+{
+	color: white;
+}
+
 ul {
 	list-style-type: none;
 	margin: 0;

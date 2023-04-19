@@ -7,14 +7,14 @@
 </head>
 <body>
     <h1>DISTRIBUTICS</h1>
-        <ul>
-            <li> <a href="index.php">Accueil</a> </li>
-            <li> <a href="Distributeur.php">Les Distributeurs</a> </li>
-            <li> <a href="Produit.php">Les Produits</a> </li>
-            <li> <a href="Demande_produit.php">Demande de produit</a> </li>
-            <li> <a href="liste_utilisateur.php">Liste des Utilisateurs</a></li>
-            <li> <a href="validation_produit.php">Validation des Produits</a></li>
-        </ul>
+    <ul>
+        <li> <a href="index.php">Connexion</a> </li>
+        <li> <a href="Distributeur.php">Accueil</a> </li>
+        <li> <a href="Produit.php">Les Produits</a> </li>
+        <li> <a href="Demande_produit.php">Demande de produit</a> </li>
+        <li> <a href="liste_utilisateur.php">Liste des Utilisateurs</a></li>
+        <li> <a href="validation_produit.php">Validation des Produits</a></li>
+    </ul>
     <h3> Veuillez renseigner les champs suivants : </h3>
         <form method="POST" enctype="multipart/form-data">
             <fieldset>

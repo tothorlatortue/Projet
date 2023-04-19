@@ -10,19 +10,19 @@ if(isset($_SESSION["nom"]))
 <html>
 <head>
 <meta charset="UTF8" />
-<title> Accueil </title>
+<title> Connexion </title>
 <link rel="stylesheet" media="screen" href="style/style.css">
 </head>
 <body>
     <h1>DISTRIBUTICS</h1>
     <ul>
-        <li> <a href="index.php">Accueil</a> </li>
-        <li> <a href="Distributeur.php">Les Distributeurs</a> </li>
+        <li> <a href="index.php">Connexion</a> </li>
+        <li> <a href="Distributeur.php">Accueil</a> </li>
         <li> <a href="Produit.php">Les Produits</a> </li>
         <li> <a href="Demande_produit.php">Demande de produit</a> </li>
         <li> <a href="liste_utilisateur.php">Liste des Utilisateurs</a></li>
         <li> <a href="validation_produit.php">Validation des Produits</a></li>
-    </ul> 
+    </ul>
 
     <h2>Connexion</h2>
     <h3> Connectez vous avec vos identifiants :</h3>
