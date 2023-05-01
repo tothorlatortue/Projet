@@ -14,7 +14,7 @@
         echo "<td><h3 class=\"np\">".$_SESSION['nom']."</h3>";
         echo "<h3 class=\"np\">".$_SESSION['prenom']."</h3>";
         //bouton déconnexion
-        echo "<h3 class=\"np\"><a href=\"logout.php\">Déconnexion</a></h3></td>";
+        echo "<h3><a id=\"deco\" href=\"logout.php\">Déconnexion</a></h3></td>";
         echo "</tr>";
         echo "</table>";
     ?>
@@ -25,5 +25,5 @@
             <li> <a href="Demande_produit.php">Demande de produit</a> </li>
             <li> <a href="liste_utilisateur.php">Liste des Utilisateurs</a></li>
             <li> <a href="validation_produit.php">Validation des Produits</a></li>
-        </ul>
+    </ul>
 </header>
