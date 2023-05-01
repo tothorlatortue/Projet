@@ -1,7 +1,6 @@
 h1
 {
     text-align: center;
-    background-color: rgb(127, 93, 160);
     color: white;
 }
 
@@ -57,3 +56,36 @@ a:hover, a:focus, a:active {
 	text-decoration: underline; 
 	color: rgb(128, 250, 103);
 	}
+
+#profil
+{
+	position: absolute;
+	top: 0px; 
+	right: 0px;
+	background-color: rgb(177, 139, 214);
+	color: white;
+	border-bottom-left-radius: 15px;
+}
+
+header
+{
+	background-color: rgb(127, 93, 160);
+	position: relative;
+	top: -20px; 
+}
+
+#pdp
+{
+	border-radius: 65px;
+	border: 3px solid rgb(218, 216, 216);
+}
+
+#hprofil
+{
+	height: 100px;
+}
+
+.np 
+{
+	color: white;
+}
