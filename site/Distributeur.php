@@ -157,8 +157,5 @@ require 'header.php';
         echo "</table>";
         echo "</div>";
     ?>
-
-    <!-- bouton déconnexion -->
-    <h1><a href="logout.php">Déconnexion</a> </h1>
 </body>
 </html>

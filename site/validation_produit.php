@@ -18,6 +18,5 @@ require 'header.php';
 ?>
 <body> 
     <h2>Page d'accueil mgl.</h2>
-
 </body>
 </html>
